@@ -20,7 +20,7 @@ You might be familiar with refs primarily as a way to access the DOM. If you pas
 
 If you’ve worked with React for a while, you might be used to using refs for this purpose. Below there’s an example of the use of refs in class components:
 
-```jsx=
+```js
 import React, { Component, createRef } from "react";
 
 class CustomTextInput extends Component {
@@ -42,7 +42,7 @@ class CustomTextInput extends Component {
 And its equivalent using a functional component:
 
 
-```jsx=
+```js
 import React, { useRef } from "react";
 
 const CustomTextInput = () => {
@@ -64,7 +64,7 @@ const CustomTextInput = () => {
 Yes! The useRef() Hook isn’t just for DOM refs. The “ref” object is a generic container whose current property is mutable and can hold any value, similar to an instance property on a class.
 
 You can write to it from inside useEffect:
-```jsx=
+```js
 function Timer() {
   const intervalRef = useRef();
 
@@ -83,7 +83,7 @@ function Timer() {
 ```
 If we just wanted to set an interval, we wouldn’t need the ref (id could be local to the effect), but it’s useful if we want to clear the interval from an event handler:
 
-```jsx=
+```js
   // ...
   function handleCancelClick() {
     clearInterval(intervalRef.current);
